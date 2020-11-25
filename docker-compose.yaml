@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  chfs:
+    container_name: chfs
+    image: rolesle/chfs
+    ports:
+      - 80:80
