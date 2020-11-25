@@ -4,5 +4,9 @@ services:
   chfs:
     container_name: chfs
     image: rolesle/chfs
+    # environment:
+    #   - SHARE_PATH=/home
+    # volumes:
+    #   - src/path:/home
     ports:
       - 80:80

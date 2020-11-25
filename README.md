@@ -1,4 +1,5 @@
 # docker-chfs
+> 原生的docker版本chfs.
 
 ### 默认值
 - web用户名密码: `admin`/`admin123`
