@@ -10,9 +10,19 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag rolesle/chfs:$(date +%s)
+
+
+    - name: Publish to Registry
+      uses: keke-cat/Publish-Docker-Github-Action@master
+      with:
+        name: rolesle/chfs
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: Dockerfile
+        tag_names: true
